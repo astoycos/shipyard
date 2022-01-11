@@ -1,5 +1,4 @@
 , := ,
-_using = $(subst $(,), ,$(using))
 PRELOAD_IMAGES ?= submariner-gateway submariner-operator submariner-route-agent
 
 # Check Makefile.dapper freshness
@@ -59,6 +58,9 @@ endif
 
 ifneq (,$(filter ovn,$(_using)))
 PRELOAD_IMAGES += submariner-networkplugin-syncer
+SETTINGS ?= $(DAPPER_SOURCE)/.shipyard.e2e.ovn.yml
+else
+SETTINGS ?= $(DAPPER_SOURCE)/.shipyard.e2e.yml
 endif
 
 ifdef FOCUS
