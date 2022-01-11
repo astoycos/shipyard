@@ -15,6 +15,10 @@ ifneq (,$(DAPPER_HOST_ARCH))
 
 # Running in Dapper
 
+# parse `using` flag here and in makefile.inc or the incorrct kind config yaml
+# may be chosen.
+_using = $(subst $(,), ,$(using))
+
 ifneq (,$(filter ovn,$(_using)))
 SETTINGS ?= $(DAPPER_SOURCE)/.shipyard.e2e.ovn.yml
 else
