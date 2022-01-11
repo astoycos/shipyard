@@ -7,8 +7,6 @@ FOCUS ?=
 SKIP ?=
 PLUGIN ?=
 
-_using = $(subst $(,), ,$(using))
-
 export BASE_BRANCH OCM_BASE_BRANCH
 
 ifneq (,$(DAPPER_HOST_ARCH))
