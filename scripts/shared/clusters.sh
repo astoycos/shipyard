@@ -126,7 +126,7 @@ function deploy_ovn_cni(){
 }
 
 function deploy_kind_ovn(){
-    local OVN_SRC_IMAGE="ghcr.io/astoycos/ovn-kubernetes/ovn-kube-f:submariner-kind-hacks"
+    local OVN_SRC_IMAGE="ghcr.io/astoycos/ovn-kubernetes/ovn-kube-f:master"
     export K8s_VERSION="${k8s_version}"
     export NET_CIDR_IPV4="${cluster_CIDRs[${cluster}]}"
     export SVC_CIDR_IPV4="${service_CIDRs[${cluster}]}"
